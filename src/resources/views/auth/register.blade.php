@@ -2,25 +2,23 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
 @section('content')
-
-<div class="contact-form__content">
-  <div class="contact-form__heading">
-    <h2>お問い合わせ</h2>
+<div class="register-form__content">
+  <div class="register-form__heading">
+    <h2>会員登録</h2>
   </div>
-  <form class="form" action="contacts/confirm" method="post">
+  <form class="form" action="/register" method="post">
     @csrf
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">お名前</span>
-        <span class="form__label--required">必須</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name') }}" />
+          <input type="text" name="name" value="{{ old('name') }}" />
         </div>
         <div class="form__error">
           @error('name')
@@ -32,11 +30,10 @@
     <div class="form__group">
       <div class="form__group-title">
         <span class="form__label--item">メールアドレス</span>
-        <span class="form__label--required">必須</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
+          <input type="email" name="email" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
           @error('email')
@@ -47,15 +44,14 @@
     </div>
     <div class="form__group">
       <div class="form__group-title">
-        <span class="form__label--item">電話番号</span>
-        <span class="form__label--required">必須</span>
+        <span class="form__label--item">パスワード</span>
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="tel" name="tel" placeholder="09012345678" value="{{ old('tel') }}" />
+          <input type="password" name="password" />
         </div>
         <div class="form__error">
-          @error('tel')
+          @error('password')
           {{ $message }}
           @enderror
         </div>
@@ -63,21 +59,20 @@
     </div>
     <div class="form__group">
       <div class="form__group-title">
-        <span class="form__label--item">お問い合わせ内容</span>
+        <span class="form__label--item">確認用パスワード</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--textarea">
-          <textarea name="content" placeholder="資料をいただきたいです">{{ old('content') }}</textarea>
+        <div class="form__input--text">
+          <input type="password" name="password_confirmation" />
         </div>
       </div>
     </div>
     <div class="form__button">
-      <button class="form__button-submit" type="submit">送信</button>
+      <button class="form__button-submit" type="submit">登録</button>
     </div>
   </form>
-  <form method="POST" action="{{ route('logout') }}">
-  @csrf
-  <button type="submit">ログアウト</button>
-</form>
+  <div class="login__link">
+    <a class="login__button-submit" href="/login">ログインの方はこちら</a>
+  </div>
 </div>
 @endsection

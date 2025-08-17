@@ -1,5 +1,5 @@
 
-# contact-form2(お問い合わせフォーム)
+# contact-form3(お問い合わせフォーム)
 
 ## 概要　
 
@@ -10,7 +10,7 @@
 リポジトリをClone
 ``` git clone
     git@github.com:aki5538/contact-form2.git
-    cd contact-form2
+    cd contact-form3
 ```
 
 Dockerを起動
@@ -45,9 +45,17 @@ Laravelのセットアップ
     -phpMyAdmin : http://localhost:8080/
 ```
 ## ユーザー認証
-
+```
     Fortifyを利用してユーザー認証機能を構築しています。
+    
+    - ログイン画面（`/login`）
+- 登録画面（`/register`）
+- ログアウト機能
+- 認証後のリダイレクト（`/home`）
+- 認証保護されたページ（`/`, `/home`）
 
+※ 未ログイン時は `/login` に自動リダイレクトされます。
+```
 ## Fortify導入手順
 ```
     docker-compose exec php bash
