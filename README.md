@@ -25,7 +25,7 @@ envファイルの準備
 
 Laravelのセットアップ
 ```
-　　docker-compose exec php bash
+    docker-compose exec php bash
     composer install
     php artisan migrate
     php artisan key:generate
@@ -44,15 +44,16 @@ Laravelのセットアップ
     -開発環境 : http://localhost/
     -phpMyAdmin : http://localhost:8080/
 ```
+
 ## ユーザー認証
 ```
-    Fortifyを利用してユーザー認証機能を構築しています。
-    
-- ログイン画面（`/login`）
-- 登録画面（`/register`）
-- ログアウト機能
-- 認証後のリダイレクト（`/home`）
-- 認証保護されたページ（`/`, `/home`）
+Fortifyを利用してユーザー認証機能を構築しています。
+
+  -ログイン画面（`/login`）
+  -登録画面（`/register`）
+  -ログアウト機能
+  -認証後のリダイレクト（`/home`）
+  -認証保護されたページ（`/`, `/home`）
 
 ※ 未ログイン時は `/login` に自動リダイレクトされます。
 ```
