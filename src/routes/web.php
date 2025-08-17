@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 
@@ -24,7 +25,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/home', [AuthController::class, 'index']);
 });
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+
 

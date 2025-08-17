@@ -9,7 +9,7 @@
 
 リポジトリをClone
 ``` git clone
-    git@github.com:aki5538/contact-form2.git
+    git@github.com:aki5538/contact-form3.git
     cd contact-form3
 ```
 
@@ -48,7 +48,7 @@ Laravelのセットアップ
 ```
     Fortifyを利用してユーザー認証機能を構築しています。
     
-    - ログイン画面（`/login`）
+- ログイン画面（`/login`）
 - 登録画面（`/register`）
 - ログアウト機能
 - 認証後のリダイレクト（`/home`）
