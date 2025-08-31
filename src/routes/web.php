@@ -22,7 +22,7 @@ Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
-Route::get('/home', [AuthController::class, 'index']);
+Route::get('/', [AuthController::class, 'index']);
 });
 
 
